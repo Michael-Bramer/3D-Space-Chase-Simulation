@@ -450,7 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingWaypoint: {fileID: 180709429}
   targetWaypoint: {fileID: 520669711}
-  movementSpeed: 4
+  movementSpeed: 6
   rotationSpeed: 2
   max_speed: 6
   min_speed: 2

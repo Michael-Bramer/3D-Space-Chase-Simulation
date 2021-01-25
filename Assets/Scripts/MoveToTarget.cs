@@ -44,6 +44,9 @@ public class MoveToTarget : MonoBehaviour
 
         // Move in the front dirction
         transform.Translate(0, 0, Time.deltaTime * movementSpeed);
+
+        //Calculate Distance
+        distanceFromTarget = calculateDistance(transform.position, targetWaypoint.transform.position);
     }
 
     public float calculateDistance(Vector3 baseObject, Vector3 targetObject)
