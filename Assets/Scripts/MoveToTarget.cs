@@ -10,12 +10,6 @@ public class MoveToTarget : MonoBehaviour
     public float movementSpeed = 4;
     public int rotationSpeed = 2;
 
-    public float max_speed = 6;
-    public float min_speed = 2;
-
-    private float distanceFromTarget = 0;
-    
-
     //how close to get to the waypoint to consider having reached it
     public float accuracy = 5.0f;
 
@@ -24,7 +18,6 @@ public class MoveToTarget : MonoBehaviour
     void Start()
     {
         transform.position = startingWaypoint.transform.position;
-        distanceFromTarget = calculateDistance(transform.position, targetWaypoint.transform.position);
     }
 
     // Update is called once per frame
@@ -45,18 +38,10 @@ public class MoveToTarget : MonoBehaviour
         // Move in the front dirction
         transform.Translate(0, 0, Time.deltaTime * movementSpeed);
 
-        //Calculate Distance
-        distanceFromTarget = calculateDistance(transform.position, targetWaypoint.transform.position);
+        
     }
 
-    public float calculateDistance(Vector3 baseObject, Vector3 targetObject)
-    {
-        float deltaX = (baseObject.x - targetObject.x);
-        float deltaY = (baseObject.y - targetObject.y);
-        float deltaZ = (baseObject.z - targetObject.z);
-
-        return Mathf.Sqrt((deltaX * deltaX) + (deltaY * deltaY) + (deltaZ * deltaZ));
-    }
+   
 
  
 
